@@ -48,7 +48,6 @@ while (<FILE>){
 	chomp $line;
     my ($groupId, $groupGenes) = (split /:\s/, $line);
     $orthoGroup{$groupId} = $groupGenes;
-    #my @groupGenes = split / /, $groupGenes, 2;
 }
 close FILE;
 
