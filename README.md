@@ -1,2 +1,3 @@
 # OrthoParser
-These programs parse OrthoFinder output and gather descriptive stats.
+These programs parse OrthoFinder output and gather descriptive stats. OrthoFinder is located at http://www.stevekellylab.com/software/orthofinder .
+After running OrthoFinder, run o-f-parser.pl as: perl o-f-parser.pl OrthologousGroups.txt. Group IDs and their contained genes will be stored in a hash. Next run o-f-csv.pl to create a CSV with a basic summary: Group IDs, number of genes in each group, number of species included, and the average number of genes per species (in-group average). This information will be useful to compare multiple runs of OrthoFinder with different parameters. The CSV can be easily manipulated in R, whereas the text file cannot.
