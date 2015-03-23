@@ -2,6 +2,7 @@
 ### ORTHOPARSER 2015 ###
 #Claire Malley March 18 2015
 #Gather stats into CSV using OrthoParser output
+use strict;
 use warnings;
 use List::Util qw(sum);
 use Text::CSV;
@@ -11,10 +12,6 @@ my @CSV0 = ();
 my @CSV1 = ();
 my @CSV2 = ();
 my @CSV3 = ();
-my $CSV0ref = \@CSV0;
-my $CSV1ref = \@CSV1;
-my $CSV2ref = \@CSV2;
-my $CSV3ref = \@CSV3;
 
 my @header= ('GroupId', 'GroupSize', 'Species', 'GenesPerSpecies');
 my $headerref = \@header;

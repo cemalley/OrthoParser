@@ -5,11 +5,9 @@
 #usage: perl o-f-parsel.pl OrthologousGroups.txt
 #purpose: store orthogroup IDs and containing genes into a hash.
 
+use strict;
 use warnings;
 use Bio::SeqIO;
-use File::Copy qw(move);
-use Archive::Tar;
-use File::Slurp;
 
 print "Welcome to OrthoParser. Please enter the full path to the protein files run in OrthoFinder:";
 my $fastaPath = <STDIN>;
@@ -54,7 +52,6 @@ close FILE;
 foreach my $i ( sort keys %orthoGroup ) {
 	my $outfile = "$i.fa";
 	open(my $outfh, '>', $outfile) or die $!;
-		#print $outfh "@{$orthoGroup{$i}}";
 		my $content = "$orthoGroup{$i}";
 		my @content = split / /, $content;
 		foreach $content(@content){
