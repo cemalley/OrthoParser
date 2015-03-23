@@ -18,7 +18,7 @@ my $headerref = \@header;
 
 my $csv = Text::CSV->new ( { binary => 1, sep_char => ',', eol    => "\n"} ) or die "Cannot use CSV: ".Text::CSV->error_diag ();
 
-open $topcsv, ">:encoding(utf8)", "OrthoFinderStats.csv" or die "OrthoFinderStats.csv: $!";
+open my $topcsv, ">:encoding(utf8)", "OrthoFinderStats.csv" or die "OrthoFinderStats.csv: $!";
 
 $csv->print($topcsv, $headerref);
 
@@ -50,7 +50,7 @@ foreach my $opFiles (@opFiles){
 my @bulk = (@CSV0, @CSV1, @CSV2, @CSV3);
 my $bulk = \@bulk;
 
-open $bulkcsv, ">>:encoding(utf8)", "OrthoFinderStats.csv" or die "OrthoFinderStats.csv: $!";
+open my $bulkcsv, ">>:encoding(utf8)", "OrthoFinderStats.csv" or die "OrthoFinderStats.csv: $!";
 
 $csv->print($bulkcsv, $bulk);
 
